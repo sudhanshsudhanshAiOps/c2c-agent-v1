@@ -1,0 +1,14 @@
+mcp
+httpx
+python-dotenv
+fastapi
+uvicorn
+pydantic
+openpyxl
+python-dotenv
+langgraph
+langgraph-checkpoint-postgres
+psycopg[binary,pool]
+openai
+neo4j
+ngrok

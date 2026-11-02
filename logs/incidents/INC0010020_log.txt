@@ -1,0 +1,132 @@
+2026-11-02 08:06:02,863 [INFO] [triggers.servicenow_webhook] Incident received: INC0010020
+2026-11-02 08:06:02,865 [INFO] [triggers.servicenow_webhook] [INC0010020] Queued: waiting for incident worker
+2026-11-02 08:06:02,866 [INFO] [workers.incident_worker] [INC0010020] Worker: processing incident
+2026-11-02 08:06:02,871 [INFO] [orchestration.nodes] [INC0010020] Agent started: Triage
+2026-11-02 08:06:02,872 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_incident
+2026-11-02 08:06:03,611 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/141ab7a953d8df1048d51901a0490eb8 -> 200
+2026-11-02 08:06:03,846 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/141ab7a953d8df1048d51901a0490eb8 -> 200
+2026-11-02 08:06:03,849 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_incident completed
+2026-11-02 08:06:03,850 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_caller_global_id
+2026-11-02 08:06:04,545 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/sys_user/d8dc431853dc171048d51901a0490ee4 -> 200
+2026-11-02 08:06:04,549 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_caller_global_id completed
+2026-11-02 08:06:04,550 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool resolve_c2c_student
+2026-11-02 08:06:04,551 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_students
+2026-11-02 08:06:04,569 [INFO] [httpx] API call: GET http://127.0.0.1:8005/learning/odatav4/searchStudent/v1/Students -> 200
+2026-11-02 08:06:04,573 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_students completed
+2026-11-02 08:06:04,575 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool resolve_c2c_student completed
+2026-11-02 08:06:04,576 [INFO] [agents.triage.agent] [INC0010020] Triage caller verification: matched
+2026-11-02 08:06:04,577 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool read_incident_screenshots
+2026-11-02 08:06:05,276 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 08:06:05,933 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 08:06:06,610 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment/915a7fe953d8df1048d51901a0490ede/file -> 200
+2026-11-02 08:06:06,812 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool read_incident_screenshots completed
+2026-11-02 08:06:06,813 [INFO] [agents.triage.agent] [INC0010020] Triage screenshot check: unreadable
+2026-11-02 08:06:06,815 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool classify_incident
+2026-11-02 08:06:06,827 [ERROR] [tools.classifier] Classification failed: APIConnectionError
+2026-11-02 08:06:06,828 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool classify_incident completed
+2026-11-02 08:06:06,829 [INFO] [orchestration.nodes] [INC0010020] Triage findings: category=Other confidence=0.0 identity=matched screenshot=unreadable classification=classification_unavailable
+2026-11-02 08:06:06,830 [INFO] [orchestration.nodes] [INC0010020] Agent finished: Triage | Status: classification unavailable | Next: review triage | Error: None
+2026-11-02 08:06:06,839 [INFO] [workers.incident_worker] [INC0010020] Workflow finished | Stage: triage | Category: Other | Status: classification_unavailable | Next: review_triage
+2026-11-02 08:12:29,061 [INFO] [triggers.servicenow_webhook] Incident received: INC0010020
+2026-11-02 08:12:29,063 [INFO] [triggers.servicenow_webhook] [INC0010020] Queued: waiting for incident worker
+2026-11-02 08:12:29,064 [INFO] [workers.incident_worker] [INC0010020] Worker: processing incident
+2026-11-02 08:12:29,077 [INFO] [orchestration.nodes] [INC0010020] Agent started: Triage
+2026-11-02 08:12:29,078 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_incident
+2026-11-02 08:12:29,990 [INFO] [httpx] API call: POST https://dev312200.service-now.com/oauth_token.do -> 200
+2026-11-02 08:12:30,742 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/141ab7a953d8df1048d51901a0490eb8 -> 200
+2026-11-02 08:12:31,006 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/141ab7a953d8df1048d51901a0490eb8 -> 200
+2026-11-02 08:12:31,010 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_incident completed
+2026-11-02 08:12:31,011 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_caller_global_id
+2026-11-02 08:12:31,726 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/sys_user/d8dc431853dc171048d51901a0490ee4 -> 200
+2026-11-02 08:12:31,729 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_caller_global_id completed
+2026-11-02 08:12:31,730 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool resolve_c2c_student
+2026-11-02 08:12:31,731 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_students
+2026-11-02 08:12:31,788 [INFO] [httpx] API call: GET http://127.0.0.1:8005/learning/odatav4/searchStudent/v1/Students -> 200
+2026-11-02 08:12:31,792 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_students completed
+2026-11-02 08:12:31,793 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool resolve_c2c_student completed
+2026-11-02 08:12:31,794 [INFO] [agents.triage.agent] [INC0010020] Triage caller verification: matched
+2026-11-02 08:12:31,796 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool read_incident_screenshots
+2026-11-02 08:12:32,459 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 08:12:33,204 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 08:12:33,931 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment/915a7fe953d8df1048d51901a0490ede/file -> 200
+2026-11-02 08:12:34,152 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool read_incident_screenshots completed
+2026-11-02 08:12:34,153 [INFO] [agents.triage.agent] [INC0010020] Triage screenshot check: unreadable
+2026-11-02 08:12:34,154 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool classify_incident
+2026-11-02 08:12:39,496 [INFO] [httpx2] API call: POST https://sponsors-scientists-component-donor.trycloudflare.com/v1/chat/completions -> 200
+2026-11-02 08:12:39,503 [INFO] [tools.classifier] Classification: Course Completion Issue (confidence: 0.95)
+2026-11-02 08:12:39,505 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool classify_incident completed
+2026-11-02 08:12:39,506 [INFO] [orchestration.nodes] [INC0010020] Triage findings: category=Course Completion Issue confidence=0.95 identity=matched screenshot=unreadable classification=success
+2026-11-02 08:12:39,507 [INFO] [orchestration.nodes] [INC0010020] Agent finished: Triage | Status: success | Next: diagnose | Error: None
+2026-11-02 08:12:39,510 [INFO] [orchestration.nodes] [INC0010020] Agent started: Communication Start
+2026-11-02 08:12:39,511 [INFO] [runtime.agent_runner] [INC0010020] CommunicationAgent: calling tool update_incident
+2026-11-02 08:12:40,361 [INFO] [httpx] API call: PUT https://dev312200.service-now.com/api/now/table/incident/141ab7a953d8df1048d51901a0490eb8 -> 200
+2026-11-02 08:12:40,364 [INFO] [runtime.agent_runner] [INC0010020] CommunicationAgent: tool update_incident completed
+2026-11-02 08:12:40,366 [INFO] [orchestration.nodes] [INC0010020] Agent finished: Communication Start | Status: in progress | Next: continue | Error: None
+2026-11-02 08:12:40,368 [INFO] [orchestration.nodes] [INC0010020] Agent started: Diagnosis
+2026-11-02 08:12:40,370 [INFO] [runtime.agent_runner] [INC0010020] DiagnosisAgent: calling tool diagnosis_scenarios
+2026-11-02 08:12:45,377 [ERROR] [neo4j.pool] Unable to retrieve routing information
+2026-11-02 08:12:45,378 [WARNING] [neo4j.session] Transaction failed and will be retried in 0.8169509445299021s (Unable to retrieve routing information)
+2026-11-02 08:12:51,210 [ERROR] [neo4j.pool] Unable to retrieve routing information
+2026-11-02 08:12:51,211 [WARNING] [runtime.agent_runner] [INC0010020] DiagnosisAgent: tool diagnosis_scenarios failed (ServiceUnavailable)
+2026-11-02 08:12:51,213 [INFO] [orchestration.nodes] [INC0010020] Diagnosis findings: skill=None candidates=[] validation=knowledge_unavailable
+2026-11-02 08:12:51,214 [INFO] [orchestration.nodes] [INC0010020] Subcategory: Unconfirmed
+2026-11-02 08:12:51,215 [INFO] [orchestration.nodes] [INC0010020] Confidence: Not evaluated
+2026-11-02 08:12:51,216 [INFO] [orchestration.nodes] [INC0010020] Missing evidence: Not evaluated
+2026-11-02 08:12:51,218 [INFO] [orchestration.nodes] [INC0010020] Agent finished: Diagnosis | Status: diagnosis unavailable | Next: review diagnosis | Error: ServiceUnavailable
+2026-11-02 08:12:51,225 [INFO] [workers.incident_worker] [INC0010020] Workflow finished | Stage: diagnosis | Category: Course Completion Issue | Status: diagnosis_unavailable | Next: review_diagnosis
+2026-11-02 09:16:13,259 [INFO] [triggers.servicenow_webhook] Incident received: INC0010020
+2026-11-02 09:16:13,261 [INFO] [triggers.servicenow_webhook] [INC0010020] Queued: waiting for incident worker
+2026-11-02 09:16:13,263 [INFO] [workers.incident_worker] [INC0010020] Worker: processing incident
+2026-11-02 09:16:13,276 [INFO] [orchestration.nodes] [INC0010020] Agent started: Triage
+2026-11-02 09:16:13,277 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_incident
+2026-11-02 09:16:14,248 [INFO] [httpx] API call: POST https://dev312200.service-now.com/oauth_token.do -> 200
+2026-11-02 09:16:14,928 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/141ab7a953d8df1048d51901a0490eb8 -> 200
+2026-11-02 09:16:15,218 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/141ab7a953d8df1048d51901a0490eb8 -> 200
+2026-11-02 09:16:15,222 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_incident completed
+2026-11-02 09:16:15,223 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_caller_global_id
+2026-11-02 09:16:15,874 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/sys_user/d8dc431853dc171048d51901a0490ee4 -> 200
+2026-11-02 09:16:15,878 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_caller_global_id completed
+2026-11-02 09:16:15,879 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool resolve_c2c_student
+2026-11-02 09:16:15,881 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_students
+2026-11-02 09:16:15,942 [INFO] [httpx] API call: GET http://127.0.0.1:8005/learning/odatav4/searchStudent/v1/Students -> 200
+2026-11-02 09:16:15,945 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_students completed
+2026-11-02 09:16:15,947 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool resolve_c2c_student completed
+2026-11-02 09:16:15,948 [INFO] [agents.triage.agent] [INC0010020] Triage caller verification: matched
+2026-11-02 09:16:15,949 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool read_incident_screenshots
+2026-11-02 09:16:16,619 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 09:16:17,354 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 09:16:18,097 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment/915a7fe953d8df1048d51901a0490ede/file -> 200
+2026-11-02 09:16:18,310 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool read_incident_screenshots completed
+2026-11-02 09:16:18,312 [INFO] [agents.triage.agent] [INC0010020] Triage screenshot check: unreadable
+2026-11-02 09:16:18,314 [INFO] [agents.triage.agent] [INC0010020] Triage: unchanged evidence; retaining saved findings
+2026-11-02 09:16:18,315 [INFO] [orchestration.nodes] [INC0010020] Triage findings: category=Course Completion Issue confidence=0.95 identity=None screenshot=unreadable classification=unchanged
+2026-11-02 09:16:18,316 [INFO] [orchestration.nodes] [INC0010020] Agent finished: Triage | Status: unchanged | Next: review diagnosis | Error: None
+2026-11-02 09:16:18,324 [INFO] [workers.incident_worker] [INC0010020] Workflow finished | Stage: triage | Category: Course Completion Issue | Status: unchanged | Next: review_diagnosis
+2026-11-02 09:31:35,236 [INFO] [triggers.servicenow_webhook] Incident received: INC0010020
+2026-11-02 09:31:35,238 [INFO] [triggers.servicenow_webhook] [INC0010020] Queued: waiting for incident worker
+2026-11-02 09:31:35,240 [INFO] [workers.incident_worker] [INC0010020] Worker: processing incident
+2026-11-02 09:31:35,257 [INFO] [orchestration.nodes] [INC0010020] Agent started: Triage
+2026-11-02 09:31:35,259 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_incident
+2026-11-02 09:31:36,242 [INFO] [httpx] API call: POST https://dev312200.service-now.com/oauth_token.do -> 200
+2026-11-02 09:31:36,916 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/141ab7a953d8df1048d51901a0490eb8 -> 200
+2026-11-02 09:31:37,201 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/141ab7a953d8df1048d51901a0490eb8 -> 200
+2026-11-02 09:31:37,205 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_incident completed
+2026-11-02 09:31:37,207 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_caller_global_id
+2026-11-02 09:31:37,885 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/sys_user/d8dc431853dc171048d51901a0490ee4 -> 200
+2026-11-02 09:31:37,889 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_caller_global_id completed
+2026-11-02 09:31:37,891 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool resolve_c2c_student
+2026-11-02 09:31:37,892 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool fetch_students
+2026-11-02 09:31:37,954 [INFO] [httpx] API call: GET http://127.0.0.1:8005/learning/odatav4/searchStudent/v1/Students -> 200
+2026-11-02 09:31:37,958 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool fetch_students completed
+2026-11-02 09:31:37,959 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool resolve_c2c_student completed
+2026-11-02 09:31:37,961 [INFO] [agents.triage.agent] [INC0010020] Triage caller verification: matched
+2026-11-02 09:31:37,962 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: calling tool read_incident_screenshots
+2026-11-02 09:31:38,691 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 09:31:39,355 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 09:31:40,042 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment/915a7fe953d8df1048d51901a0490ede/file -> 200
+2026-11-02 09:31:40,246 [INFO] [runtime.agent_runner] [INC0010020] TriageAgent: tool read_incident_screenshots completed
+2026-11-02 09:31:40,248 [INFO] [agents.triage.agent] [INC0010020] Triage screenshot check: unreadable
+2026-11-02 09:31:40,250 [INFO] [agents.triage.agent] [INC0010020] Triage: unchanged evidence; retaining saved findings
+2026-11-02 09:31:40,252 [INFO] [orchestration.nodes] [INC0010020] Triage findings: category=Course Completion Issue confidence=0.95 identity=None screenshot=unreadable classification=unchanged
+2026-11-02 09:31:40,253 [INFO] [orchestration.nodes] [INC0010020] Agent finished: Triage | Status: unchanged | Next: review diagnosis | Error: None
+2026-11-02 09:31:40,262 [INFO] [workers.incident_worker] [INC0010020] Workflow finished | Stage: triage | Category: Course Completion Issue | Status: unchanged | Next: review_diagnosis

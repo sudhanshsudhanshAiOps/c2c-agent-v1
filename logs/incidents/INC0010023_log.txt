@@ -1,0 +1,130 @@
+2026-11-02 10:34:44,078 [INFO] [triggers.servicenow_webhook] Incident received: INC0010023
+2026-11-02 10:34:44,080 [INFO] [triggers.servicenow_webhook] [INC0010023] Queued: waiting for incident worker
+2026-11-02 10:34:44,081 [INFO] [workers.incident_worker] [INC0010023] Worker: processing incident
+2026-11-02 10:34:44,093 [INFO] [orchestration.nodes] [INC0010023] Agent started: Triage
+2026-11-02 10:34:44,094 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool fetch_incident
+2026-11-02 10:34:44,890 [INFO] [httpx] API call: POST https://dev312200.service-now.com/oauth_token.do -> 200
+2026-11-02 10:34:45,597 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/bddc7c395314135048d51901a0490e12 -> 200
+2026-11-02 10:34:45,844 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/bddc7c395314135048d51901a0490e12 -> 200
+2026-11-02 10:34:45,847 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool fetch_incident completed
+2026-11-02 10:34:45,848 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool fetch_caller_global_id
+2026-11-02 10:34:46,513 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/sys_user/d8dc431853dc171048d51901a0490ee4 -> 200
+2026-11-02 10:34:46,517 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool fetch_caller_global_id completed
+2026-11-02 10:34:46,518 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool resolve_c2c_student
+2026-11-02 10:34:46,519 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool fetch_students
+2026-11-02 10:34:46,591 [INFO] [httpx] API call: GET http://127.0.0.1:8005/learning/odatav4/searchStudent/v1/Students -> 200
+2026-11-02 10:34:46,595 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool fetch_students completed
+2026-11-02 10:34:46,596 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool resolve_c2c_student completed
+2026-11-02 10:34:46,597 [INFO] [agents.triage.agent] [INC0010023] Triage caller verification: matched
+2026-11-02 10:34:46,598 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool read_incident_screenshots
+2026-11-02 10:34:47,322 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 10:34:47,325 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool read_incident_screenshots completed
+2026-11-02 10:34:47,327 [INFO] [agents.triage.agent] [INC0010023] Triage screenshot check: not_provided
+2026-11-02 10:34:47,328 [INFO] [orchestration.nodes] [INC0010023] Triage findings: category=None confidence=None identity=matched screenshot=not_provided classification=awaiting_screenshot
+2026-11-02 10:34:47,329 [INFO] [orchestration.nodes] [INC0010023] Agent finished: Triage | Status: awaiting screenshot | Next: request screenshot | Error: None
+2026-11-02 10:34:47,332 [INFO] [orchestration.nodes] [INC0010023] Agent started: Communication
+2026-11-02 10:34:47,333 [INFO] [runtime.agent_runner] [INC0010023] CommunicationAgent: calling tool load_communication_skill
+2026-11-02 10:34:47,336 [INFO] [runtime.agent_runner] [INC0010023] CommunicationAgent: tool load_communication_skill completed
+2026-11-02 10:34:47,337 [INFO] [runtime.agent_runner] [INC0010023] CommunicationAgent: calling tool compose_communication
+2026-11-02 10:34:55,622 [INFO] [httpx2] API call: POST https://vic-drivers-costumes-own.trycloudflare.com/v1/chat/completions -> 200
+2026-11-02 10:34:55,629 [INFO] [agents.communication.llm_client] [INC0010023] Model usage: input=417 output=97 cached_input=313 total=514
+2026-11-02 10:34:55,630 [INFO] [runtime.agent_runner] [INC0010023] CommunicationAgent: tool compose_communication completed
+2026-11-02 10:34:55,631 [INFO] [runtime.agent_runner] [INC0010023] CommunicationAgent: calling tool update_incident
+2026-11-02 10:34:56,446 [INFO] [httpx] API call: PUT https://dev312200.service-now.com/api/now/table/incident/bddc7c395314135048d51901a0490e12 -> 200
+2026-11-02 10:34:56,450 [INFO] [runtime.agent_runner] [INC0010023] CommunicationAgent: tool update_incident completed
+2026-11-02 10:34:56,451 [INFO] [orchestration.nodes] [INC0010023] Agent finished: Communication | Status: awaiting user information | Next: wait for screenshot | Error: None
+2026-11-02 10:34:56,457 [INFO] [workers.incident_worker] [INC0010023] Workflow finished | Stage: communication | Category: None | Status: awaiting_user_information | Next: wait_for_screenshot
+2026-11-02 10:35:10,283 [INFO] [triggers.servicenow_webhook] Incident received: INC0010023
+2026-11-02 10:35:10,285 [INFO] [triggers.servicenow_webhook] [INC0010023] Queued: waiting for incident worker
+2026-11-02 10:35:10,286 [INFO] [workers.incident_worker] [INC0010023] Worker: processing incident
+2026-11-02 10:35:10,292 [INFO] [orchestration.nodes] [INC0010023] Agent started: Triage
+2026-11-02 10:35:10,293 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool fetch_incident
+2026-11-02 10:35:11,050 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/bddc7c395314135048d51901a0490e12 -> 200
+2026-11-02 10:35:11,308 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/incident/bddc7c395314135048d51901a0490e12 -> 200
+2026-11-02 10:35:11,311 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool fetch_incident completed
+2026-11-02 10:35:11,313 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool fetch_caller_global_id
+2026-11-02 10:35:11,973 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/sys_user/d8dc431853dc171048d51901a0490ee4 -> 200
+2026-11-02 10:35:11,976 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool fetch_caller_global_id completed
+2026-11-02 10:35:11,977 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool resolve_c2c_student
+2026-11-02 10:35:11,978 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool fetch_students
+2026-11-02 10:35:11,996 [INFO] [httpx] API call: GET http://127.0.0.1:8005/learning/odatav4/searchStudent/v1/Students -> 200
+2026-11-02 10:35:12,000 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool fetch_students completed
+2026-11-02 10:35:12,001 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool resolve_c2c_student completed
+2026-11-02 10:35:12,002 [INFO] [agents.triage.agent] [INC0010023] Triage caller verification: matched
+2026-11-02 10:35:12,003 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool read_incident_screenshots
+2026-11-02 10:35:12,662 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 10:35:13,318 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment -> 200
+2026-11-02 10:35:13,984 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/attachment/590d74795314135048d51901a0490eb6/file -> 200
+2026-11-02 10:35:14,672 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool read_incident_screenshots completed
+2026-11-02 10:35:14,673 [INFO] [agents.triage.agent] [INC0010023] Triage screenshot check: read
+2026-11-02 10:35:14,674 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool fetch_caller_replies
+2026-11-02 10:35:15,348 [INFO] [httpx] API call: GET https://dev312200.service-now.com/api/now/table/sys_journal_field -> 200
+2026-11-02 10:35:15,351 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool fetch_caller_replies completed
+2026-11-02 10:35:15,352 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool classify_incident
+2026-11-02 10:35:21,510 [INFO] [httpx2] API call: POST https://vic-drivers-costumes-own.trycloudflare.com/v1/chat/completions -> 200
+2026-11-02 10:35:21,513 [INFO] [tools.classifier] Classification: Course Launch Issue (confidence: 0.95)
+2026-11-02 10:35:21,514 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool classify_incident completed
+2026-11-02 10:35:21,515 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: calling tool analyze_request
+2026-11-02 10:35:29,430 [INFO] [httpx2] API call: POST https://vic-drivers-costumes-own.trycloudflare.com/v1/chat/completions -> 200
+2026-11-02 10:35:29,432 [INFO] [tools.request_analyser] Model usage: input=878 output=109 cached_input=588 total=987
+2026-11-02 10:35:29,433 [INFO] [runtime.agent_runner] [INC0010023] TriageAgent: tool analyze_request completed
+2026-11-02 10:35:29,434 [INFO] [agents.triage.agent] [INC0010023] Triage request assessment: type=awaiting_screenshot status=supplied confidence=0.95
+2026-11-02 10:35:29,436 [INFO] [orchestration.nodes] [INC0010023] Triage findings: category=Course Launch Issue confidence=0.95 identity=matched screenshot=read classification=success
+2026-11-02 10:35:29,437 [INFO] [orchestration.nodes] [INC0010023] Agent finished: Triage | Status: success | Next: diagnose | Error: None
+2026-11-02 10:35:29,440 [INFO] [orchestration.nodes] [INC0010023] Agent started: Communication Start
+2026-11-02 10:35:29,441 [INFO] [runtime.agent_runner] [INC0010023] CommunicationAgent: calling tool update_incident
+2026-11-02 10:35:30,306 [INFO] [httpx] API call: PUT https://dev312200.service-now.com/api/now/table/incident/bddc7c395314135048d51901a0490e12 -> 200
+2026-11-02 10:35:30,309 [INFO] [runtime.agent_runner] [INC0010023] CommunicationAgent: tool update_incident completed
+2026-11-02 10:35:30,311 [INFO] [orchestration.nodes] [INC0010023] Agent finished: Communication Start | Status: in progress | Next: continue | Error: None
+2026-11-02 10:35:30,314 [INFO] [orchestration.nodes] [INC0010023] Agent started: Diagnosis
+2026-11-02 10:35:30,315 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: calling tool diagnosis_scenarios
+2026-11-02 10:35:35,332 [ERROR] [neo4j.io] [#FF59]  _: <CONNECTION> error: Failed to read from defunct connection ResolvedIPv4Address(('127.0.0.1', 7687)) (ResolvedIPv4Address(('127.0.0.1', 7687))): SocketDeadlineExceededError('read timed out')
+2026-11-02 10:35:35,653 [ERROR] [neo4j.pool] Unable to retrieve routing information
+2026-11-02 10:35:35,655 [WARNING] [neo4j.session] Transaction failed and will be retried in 0.9547047732447393s (Unable to retrieve routing information)
+2026-11-02 10:35:44,181 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: tool diagnosis_scenarios completed
+2026-11-02 10:35:44,183 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: calling tool load_category_skill
+2026-11-02 10:35:44,185 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: tool load_category_skill completed
+2026-11-02 10:35:44,187 [INFO] [agents.diagnosis.agent] [INC0010023] Diagnosis iteration 1/10
+2026-11-02 10:35:44,189 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: calling tool next_diagnosis_action
+2026-11-02 10:36:03,639 [INFO] [httpx2] API call: POST https://vic-drivers-costumes-own.trycloudflare.com/v1/chat/completions -> 200
+2026-11-02 10:36:03,643 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: tool next_diagnosis_action completed
+2026-11-02 10:36:03,644 [INFO] [agents.diagnosis.agent] [INC0010023] Model usage: input=4421 output=32 cached_input=0 total=4453
+2026-11-02 10:36:03,646 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: calling tool load_scenario_skill
+2026-11-02 10:36:03,648 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: tool load_scenario_skill completed
+2026-11-02 10:36:03,650 [INFO] [agents.diagnosis.agent] [INC0010023] Diagnosis SOP loaded: scenario=CL009
+2026-11-02 10:36:03,651 [INFO] [agents.diagnosis.agent] [INC0010023] Diagnosis iteration 2/10
+2026-11-02 10:36:03,652 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: calling tool next_diagnosis_action
+2026-11-02 10:36:08,139 [INFO] [httpx2] API call: POST https://vic-drivers-costumes-own.trycloudflare.com/v1/chat/completions -> 200
+2026-11-02 10:36:08,142 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: tool next_diagnosis_action completed
+2026-11-02 10:36:08,143 [INFO] [agents.diagnosis.agent] [INC0010023] Model usage: input=4620 output=56 cached_input=4452 total=4676
+2026-11-02 10:36:08,144 [INFO] [agents.diagnosis.agent] [INC0010023] Diagnosis requested tool=fetch_learning_item_details scenario=CL009 fields=['itemID']
+2026-11-02 10:36:08,146 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: calling tool fetch_learning_item_details
+2026-11-02 10:36:08,163 [INFO] [httpx] API call: GET http://127.0.0.1:8005/learning/odatav4/learningPlan/v1/LearningItemDetails -> 200
+2026-11-02 10:36:08,167 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: tool fetch_learning_item_details completed
+2026-11-02 10:36:08,169 [INFO] [agents.diagnosis.agent] [INC0010023] Diagnosis observation: tool=fetch_learning_item_details status=returned_data http_status=None
+2026-11-02 10:36:08,171 [INFO] [agents.diagnosis.agent] [INC0010023] Diagnosis iteration 3/10
+2026-11-02 10:36:08,172 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: calling tool next_diagnosis_action
+2026-11-02 10:36:12,590 [INFO] [httpx2] API call: POST https://vic-drivers-costumes-own.trycloudflare.com/v1/chat/completions -> 200
+2026-11-02 10:36:12,592 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: tool next_diagnosis_action completed
+2026-11-02 10:36:12,594 [INFO] [agents.diagnosis.agent] [INC0010023] Model usage: input=4808 output=57 cached_input=4675 total=4865
+2026-11-02 10:36:12,595 [INFO] [agents.diagnosis.agent] [INC0010023] Diagnosis requested tool=fetch_scheduled_offerings scenario=CL009 fields=['itemID']
+2026-11-02 10:36:12,597 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: calling tool fetch_scheduled_offerings
+2026-11-02 10:36:12,616 [INFO] [httpx] API call: GET http://127.0.0.1:8005/learning/odatav4/public/user/scheduledoffering-service/v1/ScheduledOfferings -> 200
+2026-11-02 10:36:12,620 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: tool fetch_scheduled_offerings completed
+2026-11-02 10:36:12,622 [INFO] [agents.diagnosis.agent] [INC0010023] Diagnosis observation: tool=fetch_scheduled_offerings status=returned_data http_status=None
+2026-11-02 10:36:12,623 [INFO] [agents.diagnosis.agent] [INC0010023] Diagnosis iteration 4/10
+2026-11-02 10:36:12,625 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: calling tool next_diagnosis_action
+2026-11-02 10:36:24,286 [INFO] [httpx2] API call: POST https://vic-drivers-costumes-own.trycloudflare.com/v1/chat/completions -> 200
+2026-11-02 10:36:24,288 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: tool next_diagnosis_action completed
+2026-11-02 10:36:24,290 [INFO] [agents.diagnosis.agent] [INC0010023] Model usage: input=5300 output=179 cached_input=4865 total=5479
+2026-11-02 10:36:24,291 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: calling tool finish_diagnosis
+2026-11-02 10:36:24,293 [INFO] [runtime.agent_runner] [INC0010023] DiagnosisAgent: tool finish_diagnosis completed
+2026-11-02 10:36:24,295 [INFO] [agents.diagnosis.agent] [INC0010023] Diagnosis conclusion: status=supported subissue=Course Launch Issue  - The user need to attend an offline training and get credit stop_reason=finished iterations=4/10
+2026-11-02 10:36:24,296 [INFO] [orchestration.nodes] [INC0010023] Diagnosis findings: skill=c2c-launch candidates=['CL009'] validation=supported
+2026-11-02 10:36:24,298 [INFO] [orchestration.nodes] [INC0010023] Subcategory: Course Launch Issue  - The user need to attend an offline training and get credit
+2026-11-02 10:36:24,299 [INFO] [orchestration.nodes] [INC0010023] Confidence: high
+2026-11-02 10:36:24,302 [INFO] [orchestration.nodes] [INC0010023] Missing evidence: None
+2026-11-02 10:36:24,304 [INFO] [orchestration.nodes] [INC0010023] Diagnosis check: scenario=CL009 tool=fetch_learning_item_details result=returned_data missing_identifiers=[] http_status=None error=None
+2026-11-02 10:36:24,306 [INFO] [orchestration.nodes] [INC0010023] Diagnosis check: scenario=CL009 tool=fetch_scheduled_offerings result=returned_data missing_identifiers=[] http_status=None error=None
+2026-11-02 10:36:24,307 [INFO] [orchestration.nodes] [INC0010023] Agent finished: Diagnosis | Status: diagnosis supported | Next: review diagnosis | Error: None
+2026-11-02 10:36:24,316 [INFO] [workers.incident_worker] [INC0010023] Workflow finished | Stage: diagnosis | Category: Course Launch Issue | Status: diagnosis_supported | Next: review_diagnosis
